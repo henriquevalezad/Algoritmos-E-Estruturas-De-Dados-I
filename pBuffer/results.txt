@@ -1,0 +1,53 @@
+Dr. Memory version 2.6.0 build 0 built on Sep 21 2023 17:48:48
+Windows version: WinVer=105;Rel=2009;Build=26100;Edition=Core
+Dr. Memory results for pid 20676: "pbuffer.exe"
+Application cmdline: "C:\Users\henri\Desktop\output\pbuffer.exe"
+Recorded 124 suppression(s) from default C:\Program Files (x86)\Dr. Memory\bin\suppress-default.txt
+
+Error #1: UNINITIALIZED READ: reading register ebx
+# 0 KERNELBASE.dll!FindNextFileW                   +0x219    (0x7747f2e9 <KERNELBASE.dll+0x13f2e9>)
+# 1 KERNELBASE.dll!FindNextFileA                   +0x33     (0x7756fe44 <KERNELBASE.dll+0x22fe44>)
+# 2 .text                                           [../../../src/gcc-6.3.0/libgcc/config/i386/cygwin.S:184]
+# 3 __mingw_glob                                    [../../../src/gcc-6.3.0/libgcc/config/i386/cygwin.S:184]
+# 4 _setargv                                        [c:/Users/henri/Desktop/pBuffer.c:113]
+# 5 .text      
+# 6 mainCRTStartup
+# 7 ntdll.dll!RtlInitializeExceptionChain          +0x6a     (0x7771cebb <ntdll.dll+0x6cebb>)
+# 8 ntdll.dll!RtlGetAppContainerNamedObjectPath    +0x230    (0x7771ce41 <ntdll.dll+0x6ce41>)
+Note: @0:00:01.167 in thread 24420
+Note: instruction: cmp    %ebx $0x0000001a
+
+Error #2: UNINITIALIZED READ: reading register eax
+# 0 KERNELBASE.dll!FindNextFileW                   +0x160    (0x7747f230 <KERNELBASE.dll+0x13f230>)
+# 1 KERNELBASE.dll!FindNextFileA                   +0x33     (0x7756fe44 <KERNELBASE.dll+0x22fe44>)
+# 2 .text                                           [../../../src/gcc-6.3.0/libgcc/config/i386/cygwin.S:184]
+# 3 __mingw_glob                                    [../../../src/gcc-6.3.0/libgcc/config/i386/cygwin.S:184]
+# 4 _setargv                                        [c:/Users/henri/Desktop/pBuffer.c:113]
+# 5 .text      
+# 6 mainCRTStartup
+# 7 ntdll.dll!RtlInitializeExceptionChain          +0x6a     (0x7771cebb <ntdll.dll+0x6cebb>)
+# 8 ntdll.dll!RtlGetAppContainerNamedObjectPath    +0x230    (0x7771ce41 <ntdll.dll+0x6ce41>)
+Note: @0:00:01.191 in thread 24420
+Note: instruction: test   %eax %eax
+
+===========================================================================
+FINAL SUMMARY:
+
+DUPLICATE ERROR COUNTS:
+	Error #   1:      3
+
+SUPPRESSIONS USED:
+
+ERRORS FOUND:
+      0 unique,     0 total unaddressable access(es)
+      2 unique,     4 total uninitialized access(es)
+      0 unique,     0 total invalid heap argument(s)
+      0 unique,     0 total GDI usage error(s)
+      0 unique,     0 total handle leak(s)
+      0 unique,     0 total warning(s)
+      0 unique,     0 total,      0 byte(s) of leak(s)
+      0 unique,     0 total,      0 byte(s) of possible leak(s)
+ERRORS IGNORED:
+      7 unique,     7 total,   4656 byte(s) of still-reachable allocation(s)
+         (re-run with "-show_reachable" for details)
+Details: C:\Users\henri\AppData\Roaming\Dr. Memory\DrMemory-pbuffer.exe.20676.000\results.txt
