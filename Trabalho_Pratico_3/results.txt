@@ -1,0 +1,57 @@
+Dr. Memory version 2.6.0 build 0 built on Sep 21 2023 17:48:48
+Windows version: WinVer=105;Rel=2009;Build=26100;Edition=Core
+Dr. Memory results for pid 30408: "trabalho_pratico_tres_main.exe"
+Application cmdline: "C:\Users\henri\Desktop\output\trabalho_pratico_tres_main.exe"
+Recorded 124 suppression(s) from default C:\Program Files (x86)\Dr. Memory\bin\suppress-default.txt
+
+Error #1: UNINITIALIZED READ: reading register ebx
+# 0 KERNELBASE.dll!FindNextFileW                   +0x219    (0x76a118d9 <KERNELBASE.dll+0x1418d9>)
+# 1 KERNELBASE.dll!FindNextFileA                   +0x33     (0x76b107f4 <KERNELBASE.dll+0x2407f4>)
+# 2 .text                                           [../../../src/gcc-6.3.0/libgcc/config/i386/cygwin.S:184]
+# 3 __mingw_glob                                    [../../../src/gcc-6.3.0/libgcc/config/i386/cygwin.S:184]
+# 4 _setargv                                        [c:/Users/henri/Desktop/trabalho_pratico_tres_main.c:80]
+# 5 .text                         
+# 6 mainCRTStartup                
+# 7 ntdll.dll!RtlInitializeExceptionChain          +0x6a     (0x77c1cdeb <ntdll.dll+0x6cdeb>)
+# 8 ntdll.dll!RtlGetAppContainerNamedObjectPath    +0x230    (0x77c1cd71 <ntdll.dll+0x6cd71>)
+Note: @0:00:01.230 in thread 26096
+Note: instruction: cmp    %ebx $0x0000001a
+
+Error #2: UNINITIALIZED READ: reading register eax
+# 0 KERNELBASE.dll!FindNextFileW                   +0x160    (0x76a11820 <KERNELBASE.dll+0x141820>)
+# 1 KERNELBASE.dll!FindNextFileA                   +0x33     (0x76b107f4 <KERNELBASE.dll+0x2407f4>)
+# 2 .text                                           [../../../src/gcc-6.3.0/libgcc/config/i386/cygwin.S:184]
+# 3 __mingw_glob                                    [../../../src/gcc-6.3.0/libgcc/config/i386/cygwin.S:184]
+# 4 _setargv                                        [c:/Users/henri/Desktop/trabalho_pratico_tres_main.c:80]
+# 5 .text                         
+# 6 mainCRTStartup                
+# 7 ntdll.dll!RtlInitializeExceptionChain          +0x6a     (0x77c1cdeb <ntdll.dll+0x6cdeb>)
+# 8 ntdll.dll!RtlGetAppContainerNamedObjectPath    +0x230    (0x77c1cd71 <ntdll.dll+0x6cd71>)
+Note: @0:00:01.241 in thread 26096
+Note: instruction: test   %eax %eax
+
+Error #3: LEAK 12 direct bytes 0x013e0ea0-0x013e0eac + 84 indirect bytes
+# 0 replace_malloc               [D:\a\drmemory\drmemory\common\alloc_replace.c:2580]
+# 1 criarNo                      [c:/Users/henri/Desktop/trabalho_pratico_tres_main.c:54]
+# 2 main                         [c:/Users/henri/Desktop/trabalho_pratico_tres_main.c:62]
+
+===========================================================================
+FINAL SUMMARY:
+
+DUPLICATE ERROR COUNTS:
+
+SUPPRESSIONS USED:
+
+ERRORS FOUND:
+      0 unique,     0 total unaddressable access(es)
+      2 unique,     2 total uninitialized access(es)
+      0 unique,     0 total invalid heap argument(s)
+      0 unique,     0 total GDI usage error(s)
+      0 unique,     0 total handle leak(s)
+      0 unique,     0 total warning(s)
+      1 unique,     1 total,     96 byte(s) of leak(s)
+      0 unique,     0 total,      0 byte(s) of possible leak(s)
+ERRORS IGNORED:
+      7 unique,     7 total,   4675 byte(s) of still-reachable allocation(s)
+         (re-run with "-show_reachable" for details)
+Details: C:\Users\henri\AppData\Roaming\Dr. Memory\DrMemory-trabalho_pratico_tres_main.exe.30408.000\results.txt
